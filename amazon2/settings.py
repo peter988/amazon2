@@ -58,7 +58,7 @@ ROOT_URLCONF = "amazon2.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ['C:/Users/peter/amazon2/templates'],
+        "DIRS": ['/home/peter12312345/amazon2/templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
