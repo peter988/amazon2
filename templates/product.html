@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Addproduct</title>
+	<style type="text/css">
+		.div1{
+			
+			width: 600px;
+			height: 10000px;
+			margin-top: 100px;
+		}
+
+		.add
+			{
+				position: absolute;
+				top: 35px;
+				
+			font-family: monospace;
+			color: gray;
+			font-size: 50px;
+			
+			
+
+
+		}
+		.x1{
+			font-size: 30px;
+			color: lightblue;
+			text-decoration: none;
+			display: inline;
+			margin-left: 500px;
+		}
+		.title1{
+			width:250px ;
+			height: 40px;
+			border-radius: 10px;
+			font-size: 30px;
+			color:lightgrey;
+			text-align: center;
+			background-color:rgb(235,242,241) ;
+
+		}
+		.price1{
+			width:250px ;
+			height: 40px;
+			border-radius: 10px;
+			font-size: 30px;
+			color:lightgrey;
+			text-align: center;
+			background-color: rgb(235,242,241);
+
+		}
+		.stock{
+			font-size: 25px;
+			color: gray;
+			display: inline;
+
+		}
+		.num{
+			display: inline;
+			width: 40px;
+			background-color: rgb(235,242,241);
+			cursor: pointer;
+		}
+		.img{
+			display: block;
+			width: 400px;
+			height: 40px;
+			background-color: rgb(235,242,241);
+			text-align: center;
+			font-size: 25px;
+			color: gray;
+			border-radius: 10px;
+		}
+		.sub{
+			width: 250px;
+			height: 40px;
+			background-color: rgb(130,170,245);
+			font-size: 25px;
+			color: black;
+			text-align: center;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+		.sub:active{
+			box-shadow: 5px 5px gray;
+			border-radius: 1px;
+		}
+		.sub:hover{
+			color: blueviolet;
+
+
+		}
+
+		
+	</style>
+</head>
+<body>
+	<center>
+				<p id="prod" class="add">Add a Product</p>
+		<div class="div1">
+	<form method="POST" action='.'> {% csrf_token %}
+		<a class="x1" href="/amazon">X</a>
+		<br></br><br></br>
+		<input class="title1" type="text" placeholder="Title" name="title">
+		<input class="price1" type="text" placeholder="Price" name="price">
+		<br></br><br></br>
+		<p class="stock">Left in Stock : </p>
+		<input class="num" type="number" name="num1">
+		<br></br><br></br>
+		<input class="img" type="text" placeholder="Image source" name="image">
+		<br></br><br></br>
+		<button class="sub">Submit</button>
+	</form>
+</div>
+	</center>
+
+	<script type="text/javascript">
+		let k = 0
+		let pos = 0
+		let p = document.getElementById('prod')
+		function frame() {
+			if (pos == 500) {
+				k = clearInterval();
+				p.style.color = 'rgb(130,170,245)';
+			}
+			else{
+				pos =  pos+0.5;
+				p.style.left = pos+'px';
+
+			}
+		}
+		k = setInterval(frame,1);
+	</script>
+
+</body>
+</html>
